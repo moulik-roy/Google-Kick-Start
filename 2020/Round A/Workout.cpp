@@ -9,7 +9,7 @@ int main(){
 		int M[N];
 		for(i=0; i<N; i++)
 			cin>>M[i];
-		low=1;	high=1000000000;
+		low=1;		high=1000000000;
 		while(low<high){
 			mid=low+(high-low)/2;
 			for(i=1, count=0; i<N && count<=K; i++){
