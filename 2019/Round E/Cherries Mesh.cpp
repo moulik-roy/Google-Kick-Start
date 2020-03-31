@@ -28,7 +28,7 @@ int main(){
 		}
 		for(i=1, y=y-2; i<=N; i++){
 			if(parent[i]==i)
-				y+=2;
+				y=y+2;
 		}
 		cout<<"Case #"<<x<<": "<<y<<"\n";
 	}
