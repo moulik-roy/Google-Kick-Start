@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-	int T, N, Q, i, x, y, P, V, sum;
+	int T, N, Q, i, P, V, x, y, sum;
 	cin>>T;
 	for(x=1; x<=T; x++){
 		cin>>N>>Q;
