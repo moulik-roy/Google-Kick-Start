@@ -27,14 +27,14 @@ void insert(TrieNode *root, string S){
 int dfs(TrieNode *root, int K, int depth){
 	if(root->prefix_count<K)
 		return 0;
-	int i, rem, max_score;
-	for(i=0, rem=root->word_count, max_score=0; i<26; i++){
+	int i, count, max_score;
+	for(i=0, count=root->word_count, max_score=0; i<26; i++){
 		if(root->children[i]!=NULL){
 			max_score=max_score+dfs(root->children[i], K, depth+1);
-			rem=rem+(root->children[i]->prefix_count%K);
+			count=count+(root->children[i]->prefix_count%K);
 		}
 	}
-	max_score=max_score+(depth*(rem/K));
+	max_score=max_score+(depth*(count/K));
 	return max_score;
 }
 
