@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-	long int T, i, x, w, h, rem;
+	long int T, i, x, w, h;
 	string S;
 	cin>>T;
 	for(x=1; x<=T; x++){
@@ -13,15 +13,8 @@ int main(){
 		stack <long int> count;
 		stack <pair<long int, long int>> st;
 		for(i=0, w=0, h=0; i<S.length(); i++){
-			if(S[i]>='0' && S[i]<='9'){
-				rem=0;
-				while(i<S.length() && S[i]>='0' && S[i]<='9'){
-					rem=(rem*10+(S[i]-'0'))%MOD;
-					i++;
-				}
-				count.push(rem);
-				i--;
-			}
+			if(S[i]>='0' && S[i]<='9')
+				count.push(S[i]-'0');
 			else if(S[i]=='('){
 				st.push(make_pair(w, h));
 				w=0;
