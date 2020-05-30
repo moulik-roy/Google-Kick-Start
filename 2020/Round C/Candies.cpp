@@ -39,13 +39,17 @@ int main(){
 		node BIT[N+1];
 		for(i=0, y=0; i<N; i++){
 			cin>>A[i];
-			updateBIT(BIT, N, i+1, ((i%2==0)?A[i]:-A[i]), ((i%2==0)?A[i]:-A[i])*(i+1));
+			if(i%2!=0)
+				A[i]=-A[i];
+			updateBIT(BIT, N, i+1, A[i], A[i]*(i+1));
 		}
 		while(Q--){
 			cin>>type;
 			if(type=='U'){
 				cin>>X>>V;
-				updateBIT(BIT, N, X, ((X%2!=0)?1:-1)*(V-A[X-1]), ((X%2!=0)?X:-X)*(V-A[X-1]));
+				if(X%2==0)
+					V=-V;
+				updateBIT(BIT, N, X, V-A[X-1], (V-A[X-1])*X);
 				A[X-1]=V;
 			}
 			else{
