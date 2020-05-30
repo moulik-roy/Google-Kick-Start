@@ -19,13 +19,13 @@ void updateBIT(node BIT[], long int N, long int index, long int sum, long int we
 }
 
 node getSum(node BIT[], long int index){
-	node temp;
+	node prefix;
 	while(index>0){
-		temp.sum+=BIT[index].sum;
-		temp.weighted_sum+=BIT[index].weighted_sum;
+		prefix.sum+=BIT[index].sum;
+		prefix.weighted_sum+=BIT[index].weighted_sum;
 		index-=(index&(-index));
 	}
-	return temp;
+	return prefix;
 }
 
 int main(){
