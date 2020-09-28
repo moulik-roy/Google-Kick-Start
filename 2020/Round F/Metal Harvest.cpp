@@ -10,7 +10,7 @@ int main(){
 	for(x=1; x<=T; x++){
 		cin>>N>>K;
 		vector <pair<int, int>> intervals;
-		for(i=1; i<=N; i++){
+		for(i=0; i<N; i++){
 			cin>>S>>E;
 			intervals.push_back(make_pair(S, E));
 		}
